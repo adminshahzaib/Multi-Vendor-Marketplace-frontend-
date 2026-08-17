@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@layer base {
+  :root {
+    /* Color Palette Design Tokens */
+    --color-slate-navy: #0f172a;    /* Primary Brand / High Contrast Text */
+    --color-electric-indigo: #6366f1; /* Primary CTA & Brand Accent */
+    --color-electric-hover: #4f46e5;
+    --color-vibrant-amber: #f59e0b;  /* Ratings & Secondary Accent */
+    
+    /* Surface & Background Colors */
+    --bg-page: #f8fafc;
+    --bg-surface: #ffffff;
+    --border-subtle: #e2e8f0;
+  }
+
+  /* Base Body Reset & Typography Rules */
+  body {
+    background-color: var(--bg-page);
+    color: var(--color-slate-navy);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+  }
+
+  /* Typography Scale Overrides for Impact */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.025em;
+    color: var(--color-slate-navy);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Navigation Utility */
+  .glass-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  /* Micro-Interaction Card Hover Effect */
+  .card-hover-effect {
+    transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 250ms ease;
+  }
+
+  .card-hover-effect:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.08);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+}
+
+/* Custom Scrollbar for Sleek Aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
