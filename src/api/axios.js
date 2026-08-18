@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',  withCredentials: true, // Enable credentials for CORS
+  baseURL: import.meta.env.VITE_API_URL || 'https://multi-vendor-marketplace-backend.vercel.app/', withCredentials: true, // Enable credentials for CORS
 });
 
 // Interceptor to attach JWT token to headers automatically
