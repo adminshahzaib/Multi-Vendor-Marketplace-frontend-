@@ -107,7 +107,7 @@ const ProductDetails = () => {
                   {product.category}
                 </span>
                 <span className="text-gray-500">
-                  Sold by <strong className="text-slate-900">{product.vendor?.name}</strong>
+                  Sold by <strong className="text-slate-900">{product.vendor?.storeName || product.vendor?.name || 'Marketplace Direct'}</strong>
                 </span>
               </div>
 
@@ -206,7 +206,7 @@ const ProductDetails = () => {
               <div className="space-y-2">
                 <p>• Premium grade manufacturing materials.</p>
                 <p>• Full merchant warranty included.</p>
-                <p>• Ships directly from {product.vendor?.name} regional warehouse.</p>
+                <p>• Ships directly from {product.vendor?.storeName || product.vendor?.name || 'Marketplace Direct'} regional warehouse.</p>
               </div>
             ) : (
               <div className="space-y-4">

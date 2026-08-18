@@ -35,52 +35,99 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-slate-50/50 pb-16">
-      
-      {/* Hero Section */}
-      <section className="bg-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="max-w-xl space-y-4 text-center md:text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-950/80 px-3 py-1 rounded-full inline-block">
-              Multi-Vendor Ecosystem
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Discover Quality Gear From Top Independent Merchants.
+
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden bg-slate-950 text-white py-20 px-4 sm:px-6 lg:px-8">
+        {/* Decorative Background Lighting Effects */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-10 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+          {/* Left Column: Hero Text & Call to Action */}
+          <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase">
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              Multi-Vendor Marketplace
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1] text-white">
+              Quality Gear From <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Independent Merchants</span>
             </h1>
-            <p className="text-gray-300 text-sm sm:text-base">
-              Shop verified products across tech, apparel, home goods, and more—all backed by our seamless checkout.
+
+            <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              Shop verified, high-grade tech, apparel, and home essentials. Experience guaranteed buyer protection with seamless checkout.
             </p>
-            <div className="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
                 to="/catalog"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-lg shadow-sm transition"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition duration-200 text-center"
               >
                 Shop All Products
               </Link>
               <Link
                 to="/register"
-                className="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3 rounded-lg transition"
+                className="w-full sm:w-auto border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm px-8 py-3.5 rounded-xl backdrop-blur-sm transition duration-200 text-center"
               >
                 Become a Vendor
               </Link>
             </div>
+
+            {/* Social Proof Metric Highlights */}
+            <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-md mx-auto lg:mx-0 text-left">
+              <div>
+                <p className="text-xl font-bold text-white">10k+</p>
+                <p className="text-xs text-slate-400">Products Listed</p>
+              </div>
+              <div>
+                <p className="text-xl font-bold text-white">99.8%</p>
+                <p className="text-xs text-slate-400">Order Satisfaction</p>
+              </div>
+              <div>
+                <p className="text-xl font-bold text-white">24/7</p>
+                <p className="text-xs text-slate-400">Buyer Protection</p>
+              </div>
+            </div>
           </div>
 
-          <div className="w-full max-w-sm aspect-video sm:aspect-square bg-slate-800 rounded-2xl border border-slate-700 p-4 flex flex-col justify-center items-center text-center space-y-3">
-            <span className="text-4xl">🛍️</span>
-            <h2 className="text-lg font-bold">100% Buyer Protection</h2>
-            <p className="text-xs text-gray-400">Direct order tracking, encrypted payment pipelines, and verified customer reviews.</p>
+          {/* Right Column: Hero Image Container */}
+          <div className="lg:col-span-7 relative flex justify-center lg:justify-end">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-3xl blur-2xl opacity-25 transform rotate-2 pointer-events-none" />
+
+            <div className="relative w-full max-w-2xl rounded-3xl border border-slate-800 bg-slate-900/80 p-3.5 shadow-2xl backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-2xl aspect-[16/10]">
+                <img
+                  src="https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=1200&auto=format&fit=crop"
+                  alt="Curated Marketplace Showcase"
+                  className="w-full h-full object-cover object-center transform hover:scale-105 transition duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+
+                <div className="absolute bottom-4 left-4 right-4 bg-slate-900/85 backdrop-blur-md border border-white/10 p-4 rounded-xl flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-semibold text-white">Curated Showcase</p>
+                    <p className="text-[11px] text-slate-300">Verified products from top stores</p>
+                  </div>
+                  <span className="text-xs bg-blue-600 text-white px-3 py-1 rounded-lg font-medium">
+                    Featured
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
       {/* Category Pills Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
-        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3 overflow-x-auto scrollbar-none">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
+        <div className="bg-white p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3 overflow-x-auto scrollbar-none">
           {CATEGORIES.map((cat) => (
             <Link
               key={cat}
               to={cat === 'All' ? '/catalog' : `/catalog?category=${cat}`}
-              className="text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 rounded-lg whitespace-nowrap transition"
+              className="text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-blue-600 hover:text-white px-5 py-2.5 rounded-xl whitespace-nowrap transition duration-200"
             >
               {cat}
             </Link>
@@ -93,7 +140,7 @@ const Home = () => {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold text-slate-900">Featured Products</h2>
-            <p className="text-xs text-gray-500">Hand-selected items from our highest-rated storefronts</p>
+            <p className="text-xs text-slate-500">Hand-selected items from our highest-rated storefronts</p>
           </div>
           <Link to="/catalog" className="text-xs font-semibold text-blue-600 hover:underline">
             View All →
@@ -118,15 +165,15 @@ const Home = () => {
         <h2 className="text-xl font-bold text-slate-900 mb-6">Featured Merchant Stores</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {VENDORS.map((vendor) => (
-            <div key={vendor.id} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
+            <div key={vendor.id} className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
               <div>
                 <h3 className="font-bold text-slate-900">{vendor.name}</h3>
-                <p className="text-xs text-gray-500 mt-0.5">{vendor.sales}+ Sales Completed</p>
+                <p className="text-xs text-slate-500 mt-0.5">{vendor.sales}+ Sales Completed</p>
                 <div className="text-xs text-amber-500 font-medium mt-2">★ {vendor.rating} / 5.0 Rating</div>
               </div>
               <Link
                 to={`/catalog?vendor=${vendor.id}`}
-                className="text-xs bg-gray-100 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-lg font-semibold transition"
+                className="text-xs bg-slate-100 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-lg font-semibold transition"
               >
                 Visit Store
               </Link>

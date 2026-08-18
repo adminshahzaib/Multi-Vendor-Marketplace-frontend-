@@ -23,11 +23,14 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
-          
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-slate-900 tracking-tight shrink-0">
-            <span className="bg-blue-600 text-white px-2.5 py-1 rounded-lg text-sm font-extrabold">MV</span>
-            Marketplace
+            <img
+              src="../../../dist/assets/logo.jpg"
+              alt="Marketplace Logo"
+              className="h-8 w-auto object-contain"
+            />
+            MV Marketplace
           </Link>
 
           {/* Search Bar */}

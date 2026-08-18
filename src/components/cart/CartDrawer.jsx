@@ -50,7 +50,7 @@ const CartDrawer = () => {
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 line-clamp-1">{item.name}</h4>
-                      <p className="text-[11px] text-gray-400 mt-0.5">{item.vendor?.name}</p>
+                      <p className="text-[11px] text-gray-400 mt-0.5">{item.vendor?.storeName || item.vendor?.name || 'Marketplace Direct'}</p>
                     </div>
                     
                     <div className="flex items-center justify-between mt-2">

@@ -9,6 +9,7 @@ const initialFormData = {
   categoryOption: 'Electronics',
   customCategory: '',
   price: '',
+  originalPrice: '',
   stock: '',
   image: '',
 };
@@ -65,11 +66,20 @@ const VendorDashboard = () => {
       return;
     }
 
+    const numPrice = Number(formData.price);
+    const numOriginalPrice = formData.originalPrice !== '' ? Number(formData.originalPrice) : numPrice;
+
+    if (numOriginalPrice < numPrice) {
+      alert('Selling Price cannot be higher than Original Price (MSRP).');
+      return;
+    }
+
     const payload = {
       name: formData.name,
       description: formData.description,
       category,
-      price: Number(formData.price),
+      price: numPrice,
+      originalPrice: numOriginalPrice,
       stock: Number(formData.stock),
       image: formData.image,
     };
@@ -95,6 +105,7 @@ const VendorDashboard = () => {
       description: product.description,
       ...categoryFields,
       price: String(product.price),
+      originalPrice: product.originalPrice ? String(product.originalPrice) : '',
       stock: String(product.stock),
       image: product.image || '',
     });
@@ -221,14 +232,23 @@ const VendorDashboard = () => {
                 />
                 <input
                   type="number"
-                  placeholder="Stock"
-                  required
+                  placeholder="Original Price / MSRP ($)"
                   min="0"
-                  value={formData.stock}
-                  onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
+                  step="0.01"
+                  value={formData.originalPrice}
+                  onChange={(e) => setFormData({ ...formData, originalPrice: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3"
                 />
               </div>
+              <input
+                type="number"
+                placeholder="Stock"
+                required
+                min="0"
+                value={formData.stock}
+                onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3"
+              />
               <input
                 type="url"
                 placeholder="Image URL"

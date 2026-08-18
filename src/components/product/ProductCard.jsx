@@ -49,7 +49,9 @@ const ProductCard = ({ product }) => {
           {/* Vendor Badge */}
           <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
             <span>{product.category}</span>
-            <span className="font-medium text-blue-600">{product.vendor?.name}</span>
+            <span className="font-medium text-blue-600">
+              {product.vendor?.storeName || product.vendor?.name || 'Marketplace Direct'}
+            </span>
           </div>
 
           {/* Product Title */}

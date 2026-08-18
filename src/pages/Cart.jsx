@@ -58,7 +58,7 @@ const Cart = () => {
 
                 <div className="flex-1 space-y-1">
                   <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">
-                    {item.vendor?.name}
+                    {item.vendor?.storeName || item.vendor?.name || 'Marketplace Direct'}
                   </span>
                   <h3 className="text-sm font-bold text-slate-900 line-clamp-1">{item.name}</h3>
                   <p className="text-xs font-semibold text-gray-500">${item.price.toFixed(2)} each</p>
