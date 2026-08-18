@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
+import logo from '../../../public/logo.jpg';
 
 const Navbar = () => {
   const { totalItems, setIsCartOpen } = useCart();
@@ -26,7 +27,7 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-slate-900 tracking-tight shrink-0">
             <img
-              src="../../../public/logo.jpg"
+              src={logo}
               alt="Marketplace Logo"
               className="h-8 w-auto object-contain"
             />
