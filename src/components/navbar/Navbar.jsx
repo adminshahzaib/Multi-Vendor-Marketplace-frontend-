@@ -26,7 +26,7 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-slate-900 tracking-tight shrink-0">
             <img
-              src="../../../dist/assets/logo.jpg"
+              src="../../../public/logo.jpg"
               alt="Marketplace Logo"
               className="h-8 w-auto object-contain"
             />
